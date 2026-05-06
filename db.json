@@ -1,0 +1,12 @@
+{
+  "properties": {
+    "woodenbridge": {"name":"Woodenbridge House","beds":7,"description":"Casa accogliente per famiglie e gruppi, fino a 7 posti letto. Ideale per soggiorni nella Valle Argentina.","photos":[]},
+    "aigoviano": {"name":"Casa Dell’Aigoviano","beds":2,"description":"Soluzione intima con letto matrimoniale, fino a 2 posti letto.","photos":[]}
+  },
+  "availability": {"woodenbridge":{},"aigoviano":{}},
+  "bookings": [],
+  "users": [],
+  "emailCodes": {},
+  "pricing": {"defaultAdultChild":30,"woodenbridgeSingle":50,"woodenbridgeTwo":35,"aigoviano":30,"dailyOverrides":{}},
+  "settings": {"siteTitle":"Woodenbridge House","subtitle":"Disponibilità e richieste prenotazione","phone":"","email":"","terms":"Email e numero di telefono devono essere validi: senza contatti corretti la prenotazione non potrà andare a buon fine."}
+}
