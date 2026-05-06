@@ -1,0 +1,12 @@
+let data, current=new Date(), selected=[];
+const $=s=>document.querySelector(s);
+const fmt=d=>d.toISOString().slice(0,10);
+const monthName=d=>d.toLocaleDateString('it-IT',{month:'long',year:'numeric'});
+function datesBetween(a,b){const out=[];let d=new Date(a+'T00:00:00');const end=new Date(b+'T00:00:00');while(d<=end){out.push(fmt(d));d.setDate(d.getDate()+1)}return out}
+async function load(){data=await fetch('/api/public').then(r=>r.json());$('#property').innerHTML=Object.entries(data.properties).map(([id,p])=>`<option value="${id}">${p.name} - ${p.beds} posti</option>`).join('');renderProps();renderCal()}
+function renderProps(){ $('#properties').innerHTML=Object.entries(data.properties).map(([id,p])=>`<article class="card"><img src="${p.photos[0]||''}" alt=""><h2>${p.name}</h2><p><b>Fino a ${p.beds} posti letto</b></p><p>${p.description}</p></article>`).join('') }
+function renderCal(){const id=$('#property').value; $('#month').textContent=monthName(current); const y=current.getFullYear(),m=current.getMonth(); const first=new Date(y,m,1); const start=(first.getDay()+6)%7; const total=new Date(y,m+1,0).getDate(); let html=''; for(let i=0;i<start;i++)html+='<button class="day blank"></button>'; for(let n=1;n<=total;n++){const date=fmt(new Date(y,m,n)); const busy=data.availability[id]?.[date]==='busy'; const sel=selected.includes(date); html+=`<button class="day ${busy?'busy':'free'} ${sel?'selected':''}" data-date="${date}"><b>${n}</b><br>${busy?'Occupata':'Libera'}</button>`} $('#days').innerHTML=html}
+$('#days').onclick=e=>{const b=e.target.closest('[data-date]'); if(!b)return; const d=b.dataset.date; selected=selected.includes(d)?selected.filter(x=>x!==d):[...selected,d].sort(); if(selected.length){$('#requestForm').from.value=selected[0];$('#requestForm').to.value=selected[selected.length-1]} renderCal()}
+$('#prev').onclick=()=>{current.setMonth(current.getMonth()-1);renderCal()}; $('#next').onclick=()=>{current.setMonth(current.getMonth()+1);renderCal()}; $('#property').onchange=()=>{selected=[];renderCal()};
+$('#requestForm').onsubmit=async e=>{e.preventDefault(); const body=Object.fromEntries(new FormData(e.target)); body.propertyId=$('#property').value; const res=await fetch('/api/request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}); const j=await res.json(); $('#msg').textContent=j.message||j.error; if(res.ok)e.target.reset()}
+load();
