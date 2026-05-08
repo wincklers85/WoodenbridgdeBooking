@@ -1,0 +1,114 @@
+{
+  "settings": {
+    "siteName": "Woodenbridge House",
+    "logo": "/data/uploads/woodenbridge-logo.jpeg",
+    "contactName": "Stephan",
+    "contactPhone": "3482782639",
+    "contactEmail": "woodenbridgehouse@gmail.com",
+    "wifiPassword": "moliniditriora",
+    "checkout": "12:00",
+    "descriptions": {
+      "it": "Scegli le date, controlla disponibilità e invia la richiesta di prenotazione.",
+      "en": "Choose your dates, check availability and send a booking request.",
+      "fr": "Choisissez vos dates, vérifiez la disponibilité et envoyez une demande."
+    },
+    "welcomeMessages": {
+      "it": "Benvenuti a Woodenbridge House. Vi chiediamo gentilmente di rispettare la casa e lasciare tutto in ordine.",
+      "en": "Welcome to Woodenbridge House. Please respect the house and leave everything tidy.",
+      "fr": "Bienvenue à Woodenbridge House. Merci de respecter la maison et de laisser tout en ordre."
+    }
+  },
+  "houses": [
+    {
+      "id": "woodenbridge",
+      "name": "Woodenbridge House",
+      "capacity": 7,
+      "bedrooms": 3,
+      "description": "Casa principale fino a 7 posti letto, immersa nel verde e perfetta per famiglie, gruppi e soggiorni nella Valle Argentina.",
+      "photos": [],
+      "services": [
+        "wifi",
+        "stair_gates",
+        "kitchen",
+        "heating"
+      ]
+    },
+    {
+      "id": "aigoviano",
+      "name": "Casa Dell’aigoviano",
+      "capacity": 2,
+      "bedrooms": 1,
+      "description": "Casa romantica e raccolta con letto matrimoniale, ideale per coppie o piccoli soggiorni.",
+      "photos": [],
+      "services": [
+        "wifi",
+        "kitchen",
+        "heating"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "wifi",
+      "name": {
+        "it": "Wi‑Fi gratuito",
+        "en": "Free Wi‑Fi",
+        "fr": "Wi‑Fi gratuit"
+      },
+      "icon": "📶",
+      "description": {
+        "it": "Password Wi‑Fi fornita nella conferma booking.",
+        "en": "Wi‑Fi password included in the booking confirmation.",
+        "fr": "Mot de passe Wi‑Fi fourni dans la confirmation."
+      }
+    },
+    {
+      "id": "stair_gates",
+      "name": {
+        "it": "Cancelletti scale",
+        "en": "Stair gates",
+        "fr": "Barrières escaliers"
+      },
+      "icon": "🛡️",
+      "description": {
+        "it": "Installazione su richiesta per famiglie con bambini piccoli.",
+        "en": "Available on request for families with small children.",
+        "fr": "Disponible sur demande pour familles avec enfants."
+      }
+    },
+    {
+      "id": "kitchen",
+      "name": {
+        "it": "Cucina attrezzata",
+        "en": "Equipped kitchen",
+        "fr": "Cuisine équipée"
+      },
+      "icon": "🍳",
+      "description": {
+        "it": "Cucina disponibile per gli ospiti.",
+        "en": "Kitchen available for guests.",
+        "fr": "Cuisine disponible pour les hôtes."
+      }
+    },
+    {
+      "id": "heating",
+      "name": {
+        "it": "Riscaldamento",
+        "en": "Heating",
+        "fr": "Chauffage"
+      },
+      "icon": "🔥",
+      "description": {
+        "it": "Casa riscaldata nei periodi freddi.",
+        "en": "Heated house during colder periods.",
+        "fr": "Maison chauffée pendant les périodes froides."
+      }
+    }
+  ],
+  "users": [],
+  "bookings": [],
+  "availability": {},
+  "verifications": [],
+  "resetTokens": [],
+  "priceOverrides": {}
+}
