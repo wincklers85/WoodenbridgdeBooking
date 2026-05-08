@@ -1,1 +1,0 @@
-{"scripts":{"start":"node server.js"},"dependencies":{"dotenv":"latest","express":"latest","multer":"latest","nodemailer":"latest"},"engines":{"node":">=18"}}
